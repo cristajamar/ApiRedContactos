@@ -169,7 +169,6 @@
     <Compile Include="Models\Mensaje.cs">
       <DependentUpon>RedContactos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\RedContactos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +187,7 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>RedContactos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporsitorios\ContactoRepositorio.cs" />
     <Compile Include="Reporsitorios\MensajeRepositorio.cs" />
     <Compile Include="Reporsitorios\UsuarioRepositorio.cs" />

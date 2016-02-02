@@ -23,6 +23,7 @@
           <Property Name="asunto" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="contenido" Type="ntext" Nullable="false" />
           <Property Name="leido" Type="bit" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -33,7 +34,7 @@
           <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="apellidos" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="foto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="foto" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Contacto_Usuario">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
@@ -119,6 +120,7 @@
           <Property Name="asunto" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="contenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="leido" Type="Boolean" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Origen" Relationship="Self.FK_Mensaje_Usuario" FromRole="Mensaje" ToRole="Usuario" />
           <NavigationProperty Name="Destino" Relationship="Self.FK_Mensaje_Usuario1" FromRole="Mensaje" ToRole="Usuario" />
         </EntityType>
@@ -131,11 +133,11 @@
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="true" />
           <NavigationProperty Name="Enviados" Relationship="Self.FK_Mensaje_Usuario" FromRole="Usuario" ToRole="Mensaje" />
           <NavigationProperty Name="Recibidos" Relationship="Self.FK_Mensaje_Usuario1" FromRole="Usuario" ToRole="Mensaje" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.Contacto" FromRole="Usuario" ToRole="Usuario1" />
-          <NavigationProperty Name="Amigo" Relationship="Self.Contacto" FromRole="Usuario1" ToRole="Usuario" />
+          <NavigationProperty Name="Amigo" Relationship="Self.Contacto" FromRole="Usuario" ToRole="Usuario1" />
+          <NavigationProperty Name="Usuario2" Relationship="Self.Contacto" FromRole="Usuario1" ToRole="Usuario" />
         </EntityType>
         <Association Name="FK_Mensaje_Usuario">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
@@ -196,6 +198,7 @@
                 <ScalarProperty Name="asunto" ColumnName="asunto" />
                 <ScalarProperty Name="contenido" ColumnName="contenido" />
                 <ScalarProperty Name="leido" ColumnName="leido" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
