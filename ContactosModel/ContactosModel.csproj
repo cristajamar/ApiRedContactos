@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ContactoModel.cs" />
+    <Compile Include="Model\FotosModel.cs" />
     <Compile Include="Model\MensajeModel.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
