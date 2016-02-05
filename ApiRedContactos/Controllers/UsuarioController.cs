@@ -39,6 +39,7 @@ namespace ApiRedContactos.Controllers
         [ResponseType(typeof (UsuarioModel))]
         public IHttpActionResult Post(UsuarioModel model)
         {
+          
             var data = UsuarioRepositorio.Add(model);
             if (data == null)
             {
